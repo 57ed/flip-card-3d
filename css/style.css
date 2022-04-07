@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --body: #eed891;
+  --card: #d48600;
+  --topLeftB: #cc6600;
+  --mainB: #4d2600;
+  --border: rgba(0, 0, 0, 0.2);
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--body);
+}
+.wrapper {
+  position: relative;
+  height: 330px;
+  width: 620px;
+  perspective: 1000px;
+}
+.wrapper .flip-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: var(--card);
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+.wrapper:hover .flip-card {
+  transform: rotateY(180deg);
+}
+.flip-card .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: var(--card);
+  border-top: 2px solid var(--topLeftB);
+  border-left: 2px solid var(--topLeftB);
+  box-shadow: 0 5px 10px var(--border);
+  backface-visibility: hidden;
+  position: absolute;
+}
+.card span.circle,
+.card span.square {
+  height: 110px;
+  width: 110px;
+  border: 10px solid var(--mainB);
